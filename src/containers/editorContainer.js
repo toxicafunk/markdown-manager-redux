@@ -2,12 +2,6 @@ import { connect } from 'react-redux'
 import Editor from '../components/editor'
 import { update, reset } from '../actions';
 
-const mapStateToProps = (state) => {
-    console.log("mapStateToProps editor: " + state)
-   return {
-      input: state
-   };
-};
 
 /*
  * This is the only way to trigger a state change.
@@ -20,4 +14,4 @@ const mapDispatchToProps = (dispatch) => {
    };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Editor);
+export default connect(null, mapDispatchToProps)(Editor);

@@ -3,9 +3,7 @@ import React, { Component } from 'react';
 class Editor extends Component {
 
   render() {
-    const { input, update, reset } = this.props;
-
-    console.log("Editor:" + input)
+    const { update, reset } = this.props;
 
     function onChange(event) {
       var text = event.target.value;

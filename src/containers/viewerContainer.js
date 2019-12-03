@@ -12,7 +12,6 @@ import Viewer from '../components/viewer'
  * in place of mapStateToProps
  */
 const mapStateToProps = (state) => {
-    console.log("mapStateToProps viewer: " + state)
    return {
        input: state
    };
