@@ -1,6 +1,8 @@
 import { connect } from 'react-redux'
 import Viewer from '../components/viewer'
 
+var md = require('markdown-it')();
+
 /*
  * What data from the store the connected component needs
  *    It is called every time the store state changes.
@@ -13,7 +15,7 @@ import Viewer from '../components/viewer'
  */
 const mapStateToProps = (state) => {
    return {
-       input: state
+       input: md.render(state)
    };
 };
 

@@ -5,3 +5,7 @@ export function update(text) {
 export function reset() {
    return { type: 'RESET' }
 }
+
+export function upload(text) {
+   return { type: 'UPDATE_EDITOR_FROM_UPLOAD', text: text }
+}
