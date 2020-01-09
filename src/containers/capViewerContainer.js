@@ -5,7 +5,7 @@ const CapViewer = Viewer
 
 const mapStateToProps = (state) => {
    return {
-       input: state.toUpperCase()
+       input: state.typed.toUpperCase()
    };
 };
 

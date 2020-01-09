@@ -1,7 +1,13 @@
 import { connect } from 'react-redux'
 import Editor from '../components/editor'
-import { update, reset } from '../actions';
+import { update, reset, load, save, setName } from '../actions';
 
+const mapStateToProps = (state) => {
+   return {
+       input: state.typed,
+       name: state.mdname
+   };
+};
 
 /*
  * This is the only way to trigger a state change.
@@ -10,8 +16,11 @@ import { update, reset } from '../actions';
 const mapDispatchToProps = (dispatch) => {
    return {
        update: (text) => dispatch(update(text) ),
-       reset: () => dispatch(reset())
+       reset: () => dispatch(reset()),
+       load: () => dispatch(load()),
+       save: () => dispatch(save()),
+       setName: (name) => dispatch(setName(name))
    };
 };
 
-export default connect(null, mapDispatchToProps)(Editor);
+export default connect(mapStateToProps, mapDispatchToProps)(Editor);

@@ -15,7 +15,7 @@ var md = require('markdown-it')();
  */
 const mapStateToProps = (state) => {
    return {
-       input: md.render(state)
+       input: md.render(state.typed)
    };
 };
 
