@@ -11,6 +11,10 @@ const reducer = (state = initState, action) => {
       localStorage.setItem(state.mdname, JSON.stringify(state));
       return state;
    }
+   case 'LOAD': {
+      var item = JSON.parse(localStorage.getItem(state.mdname));
+      return { ...state, typed: item.typed};
+   }
    default: return state
    }
 }
